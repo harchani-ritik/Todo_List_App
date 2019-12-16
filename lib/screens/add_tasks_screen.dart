@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_list_app/models/task_data.dart';
 
-class AddTasksScreen extends StatelessWidget {
+
+class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String newTaskTitle;
+
     return Container(
-      color: Color(0xFF757575),
+      color: Color(0xff757575),
       child: Container(
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
           ),
@@ -17,29 +22,32 @@ class AddTasksScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text('Add Task',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 30.0,
-              color: Colors.lightBlueAccent,
-              fontWeight: FontWeight.w400,
-            ),),
+            Text(
+              'Add Task',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30.0,
+                color: Colors.lightBlueAccent,
+              ),
+            ),
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: 20.0,
+              onChanged: (newText) {
+                newTaskTitle = newText;
+              },
             ),
             FlatButton(
-              child: Text('Add',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.white,
-              ),),
+              child: Text(
+                'Add',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               color: Colors.lightBlueAccent,
-              onPressed: (){
-                //implement tasks adding functionality
+              onPressed: () {
+                Provider.of<TaskData>(context).addTask(newTaskTitle);
+                Navigator.pop(context);
               },
             ),
           ],
