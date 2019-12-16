@@ -3,10 +3,17 @@ import 'package:provider/provider.dart';
 import 'package:todo_list_app/models/task_data.dart';
 
 
-class AddTaskScreen extends StatelessWidget {
+class AddTaskScreen extends StatefulWidget {
+
+  @override
+  _AddTaskScreenState createState() => _AddTaskScreenState();
+}
+
+class _AddTaskScreenState extends State<AddTaskScreen> {
+  String newTaskTitle;
+
   @override
   Widget build(BuildContext context) {
-    String newTaskTitle;
 
     return Container(
       color: Color(0xff757575),
@@ -33,8 +40,9 @@ class AddTaskScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
-              onChanged: (newText) {
-                newTaskTitle = newText;
+              onChanged: (value) {
+                newTaskTitle = value;
+                print(newTaskTitle);
               },
             ),
             FlatButton(
@@ -46,6 +54,7 @@ class AddTaskScreen extends StatelessWidget {
               ),
               color: Colors.lightBlueAccent,
               onPressed: () {
+                print(newTaskTitle);
                 Provider.of<TaskData>(context).addTask(newTaskTitle);
                 Navigator.pop(context);
               },
