@@ -1,16 +1,11 @@
-# todo_list_app
+# ToDo List App
 
-A new Flutter application.
+### A todo list application made with flutter with basic use of Provider Package for lifting the state. 
 
-## Getting Started
+![profile_details](screenshot1.png)
 
-This project is a starting point for a Flutter application.
+![journey_plan](screenshot2.png)
 
-A few resources to get you started if this is your first Flutter project:
+![ride_search](screenshot3.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![chat_room](screenshot4.png)
