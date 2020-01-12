@@ -1,6 +1,6 @@
 # ToDo List App
 
-### A todo list application made with flutter with basic use of Provider Package for lifting the state. 
+A Todo list application made with flutter with basic use of Provider Package for lifting the state. 
 
 ![profile_details](screenshot1.png)
 
